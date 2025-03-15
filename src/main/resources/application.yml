@@ -1,3 +1,24 @@
 spring:
   application:
     name: SideQuest-app
+  datasource:
+    url: jdbc:postgresql://localhost:5432/sidequest
+    username: postgres
+    password: postgres
+    hikari:
+      minimum-idle: 5
+      maximum-pool-size: 20
+      idle-timeout: 30000
+      pool-name: HikariPool-1
+      max-lifetime: 1800000
+      connection-timeout: 30000
+  jpa:
+    hibernate:
+      ddl-auto: none
+    show-sql: true
+    properties:
+      hibernate:
+  liquibase:
+    change-log: classpath:liquibase/changelog-master.xml
+    enabled: true
+    liquibase-schema: public

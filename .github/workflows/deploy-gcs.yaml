@@ -61,5 +61,7 @@ jobs:
     - name: Deploy via GCS
       run: |
         gsutil -m rm -rf gs://github-actions-sidequest/* || echo "$?"
-        gsutil -m cp -r * gs://github-actions-sidequest/
+        # gsutil -m cp -r * gs://github-actions-sidequest/
+        gsutil -m cp -r build/* gs://github-actions-sidequest/
+
 

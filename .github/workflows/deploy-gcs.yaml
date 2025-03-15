@@ -62,6 +62,11 @@ jobs:
       run: |
         gsutil -m rm -rf gs://github-actions-sidequest/* || echo "$?"
         # gsutil -m cp -r * gs://github-actions-sidequest/
+
+        # uploads build files for frontend
         gsutil -m cp -r build/* gs://github-actions-sidequest/
+        # host website 
+        gsutil web set -m index.html -e 404.html gs://github-actions-sidequest/
+
 
 

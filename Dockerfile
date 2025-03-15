@@ -11,7 +11,7 @@ mvn clean install
 
 # Stage 2: Run the application
 FROM openjdk:23-jdk-slim
-LABEL authors="rwhite"
+LABEL authors="ajohnson"
 
 # Copy the built JAR file from the previous stage
 COPY --from=build /usr/src/app/target/app.jar app.jar

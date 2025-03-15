@@ -4,7 +4,7 @@ name: GCS Deployment
 # events but only for the main branch
 on:
   push:
-    branches: [ test ]
+    branches: [ testing-stuff ]
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:

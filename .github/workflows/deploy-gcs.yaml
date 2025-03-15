@@ -67,6 +67,9 @@ jobs:
         gsutil -m cp -r build/* gs://github-actions-sidequest/
         # host website 
         gsutil web set -m index.html -e 404.html gs://github-actions-sidequest/
+        # public wifi
+        gsutil iam ch allUsers:objectViewer gs://github-actions-sidequest/
+
 
 
 

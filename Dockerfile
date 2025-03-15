@@ -1,6 +1,6 @@
 # Stage 1: Build the application
 FROM maven:3.9.9-amazoncorretto-23 AS build
-LABEL authors="rwhite"
+LABEL authors="ajohnson"
 
 # Copy the project files
 WORKDIR /srv/src

@@ -1,5 +1,5 @@
 # Stage 1: Build the application
-FROM maven:3.9.9-amazoncorretto-23 AS build
+FROM maven:3.9.9-amazoncorretto-21 AS build
 LABEL authors="rwhite"
 
 # Copy the project files
@@ -10,7 +10,7 @@ RUN cd /srv/src/ &&\
 mvn clean install
 
 # Stage 2: Run the application
-FROM openjdk:23-jdk-slim
+FROM openjdk:21-jdk-slim
 LABEL authors="rwhite"
 
 # Copy the built JAR file from the previous stage

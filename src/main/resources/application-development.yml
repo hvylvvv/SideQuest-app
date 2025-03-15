@@ -1,0 +1,49 @@
+spring:
+  application:
+    name: SideQuest-app
+  config:
+    activate:
+      on-profile: development
+  datasource:
+    url: jdbc:postgresql://localhost:5432/sidequest
+    username: postgres
+    password: postgres
+  jpa:
+    hibernate:
+      ddl-auto: none
+    show-sql: true
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+  liquibase:
+    change-log: classpath:liquibase/changelog-master.xml
+  ldap:
+    base: dc=example,dc=com
+    username: cn=admin,dc=example,dc=com
+    password: admin
+    urls: ldap://localhost:8389/
+  security:
+    ldap:
+      user-dn-pattern: uid={0},ou=people
+      group-search-base: ou=groups
+    oauth2:
+      client:
+        registration:
+          google:
+            client-id: YOUR_GOOGLE_CLIENT_ID
+            client-secret: YOUR_GOOGLE_CLIENT_SECRET
+            scope: profile, email
+            redirect-uri: "{baseUrl}/login/oauth2/code/{registrationId}"
+            authorization-grant-type: authorization_code
+            client-name: Google
+        provider:
+          google:
+            authorization-uri: https://accounts.google.com/o/oauth2/auth
+            token-uri: https://oauth2.googleapis.com/token
+            user-info-uri: https://www.googleapis.com/oauth2/v3/userinfo
+            user-name-attribute: sub
+application:
+  settings:
+    admins:
+      - rushawnwhite29@gmail.com
+      - contact.ajayjohnson@gmail.com

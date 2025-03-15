@@ -4,6 +4,8 @@
         xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
         xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
          http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.5.xsd">
-    <include file="changelogs/create-user-table.sql" relativeToChangelogFile="true"/>
+    <include file="changelogs/1-create-app-user-table.sql" relativeToChangelogFile="true"/>
+    <include file="changelogs/2-create-authority-table.sql" relativeToChangelogFile="true"/>
+    <include file="changelogs/3-create-user-authority-table.sql" relativeToChangelogFile="true"/>
 </databaseChangeLog>
-        <!--    @formatter:on-->
+<!--    @formatter:on-->

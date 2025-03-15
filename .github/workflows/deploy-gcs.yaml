@@ -48,10 +48,10 @@ jobs:
     # Authenticate using google-github-actions/auth
     - uses: google-github-actions/auth@v1
       with:
-        workload_identity_provider: ${{ secrets.GCP_WORKLOAD_IDENTITY_PROVIDER }}
-        service_account: ${{ secrets.GCP_SERVICE_ACCOUNT }}
-        # OR use credentials_json if needed
-        # credentials_json: ${{ secrets.GCP_CREDENTIALS_JSON }}
+        # workload_identity_provider: ${{ secrets.GCP_WORKLOAD_IDENTITY_PROVIDER }}
+        # service_account: ${{ secrets.GCP_SERVICE_ACCOUNT }}
+        # # OR use credentials_json if needed
+        # credentials_json: ${{ secrets.GCP_SIDEQUEST_KEY }}
 
     # Setup gcloud CLI
     - uses: google-github-actions/setup-gcloud@v2

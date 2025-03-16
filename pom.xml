@@ -22,6 +22,7 @@
 
         <!-- static validation -->
         <project.annotations.version>24.1.0</project.annotations.version>
+        <project.modelmapper.version>3.2.0</project.modelmapper.version>
     </properties>
 
     <dependencyManagement>
@@ -30,6 +31,12 @@
                 <groupId>org.jetbrains</groupId>
                 <artifactId>annotations</artifactId>
                 <version>${project.annotations.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.modelmapper</groupId>
+                <artifactId>modelmapper</artifactId>
+                <version>${project.modelmapper.version}</version>
             </dependency>
         </dependencies>
     </dependencyManagement>
@@ -102,6 +109,11 @@
         <dependency>
             <groupId>org.jetbrains</groupId>
             <artifactId>annotations</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.modelmapper</groupId>
+            <artifactId>modelmapper</artifactId>
         </dependency>
 
     </dependencies>

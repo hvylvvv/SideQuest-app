@@ -1,9 +1,9 @@
 package com.SideQuest_app.service.oauth;
 
 import com.SideQuest_app.domain.config.GeneralSettings;
-import com.SideQuest_app.domain.model.AppUser;
-import com.SideQuest_app.domain.model.auth.Authority;
-import com.SideQuest_app.domain.model.auth.LoginProvider;
+import com.SideQuest_app.domain.model.core.AppUser;
+import com.SideQuest_app.domain.model.core.auth.Authority;
+import com.SideQuest_app.domain.model.core.auth.LoginProvider;
 import com.SideQuest_app.repository.AuthorityRepository;
 import com.SideQuest_app.repository.UserAuthorityRepository;
 import com.SideQuest_app.repository.UserRepository;
@@ -141,7 +141,6 @@ public class AppUserServiceImpl implements AppUserService {
                         .firstName(ue.getFirstName())
                         .lastName(ue.getLastName())
                         .email(ue.getEmail())
-                        .provider(ue.getProvider())
                         .authorities(ue
                                              .getUserAuthorities()
                                              .stream()
@@ -165,7 +164,8 @@ public class AppUserServiceImpl implements AppUserService {
             AppUserDetails appUserDetails = AppUserDetails
                     .builder()
                     .provider(provider)
-                    .name(oidcUser.getFullName())
+                    .firstName(oidcUser.getAttribute("name"))
+                    .lastName(oidcUser.getAttribute("family_name"))
                     .email(oidcUser.getEmail())
                     .userId(oidcUser.getName())
                     .password(passwordEncoder.encode(UUID.randomUUID().toString()))
@@ -192,8 +192,8 @@ public class AppUserServiceImpl implements AppUserService {
             AppUserDetails appUserDetails = AppUserDetails
                     .builder()
                     .provider(provider)
-                    .firstName(oAuth2User.getAttribute("login"))
-                    .name(oAuth2User.getAttribute("login"))
+                    .firstName(oAuth2User.getAttribute("name"))
+                    .lastName(oAuth2User.getAttribute("family_name"))
                     .password(passwordEncoder.encode(UUID.randomUUID().toString()))
                     .userId(oAuth2User.getName())
                     .accessToken(userRequest.getAccessToken().getTokenValue())

@@ -1,6 +1,6 @@
-package com.SideQuest_app.domain.model.auth;
+package com.SideQuest_app.domain.model.core.auth;
 
-import com.SideQuest_app.domain.model.AppUser;
+import com.SideQuest_app.domain.model.core.AppUser;
 import com.fasterxml.jackson.annotation.JsonBackReference;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -24,15 +24,15 @@ import lombok.ToString;
 public class UserAuthority {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    Long id;
+    private int id;
 
     @ManyToOne
     @ToString.Include
     @JsonBackReference
-    AppUser appUser;
+    private AppUser appUser;
 
     @ManyToOne
     @ToString.Exclude
     @JsonBackReference
-    Authority authority;
+    private Authority authority;
 }

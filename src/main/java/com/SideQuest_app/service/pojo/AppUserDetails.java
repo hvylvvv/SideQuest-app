@@ -1,6 +1,6 @@
 package com.SideQuest_app.service.pojo;
 
-import com.SideQuest_app.domain.model.auth.LoginProvider;
+import com.SideQuest_app.domain.model.core.auth.LoginProvider;
 import lombok.Builder;
 import lombok.Data;
 
@@ -24,8 +24,6 @@ public class AppUserDetails implements UserDetails, OidcUser {
     String password;
     String email;
     String userId;
-
-    String name;
     String accessToken;
 
     LoginProvider provider;

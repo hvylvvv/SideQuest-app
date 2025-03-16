@@ -1,4 +1,4 @@
-package com.SideQuest_app.domain.model.auth;
+package com.SideQuest_app.domain.model.core.auth;
 
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.CascadeType;
@@ -31,15 +31,15 @@ public class Authority {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    Long id;
+    private int id;
 
-    String name;
+    private String name;
 
     @Enumerated(value = EnumType.STRING)
-    LoginProvider provider;
+    private LoginProvider provider;
 
     @OneToMany(mappedBy = "authority", fetch = FetchType.EAGER, cascade = CascadeType.ALL, orphanRemoval = true)
     @JsonManagedReference
-    final List<UserAuthority> assignedTo = new ArrayList<>();
+    private final List<UserAuthority> assignedTo = new ArrayList<>();
 
 }

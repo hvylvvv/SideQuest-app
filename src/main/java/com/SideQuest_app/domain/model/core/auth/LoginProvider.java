@@ -1,4 +1,4 @@
-package com.SideQuest_app.domain.model.auth;
+package com.SideQuest_app.domain.model.core.auth;
 
 public enum LoginProvider {
     GOOGLE,

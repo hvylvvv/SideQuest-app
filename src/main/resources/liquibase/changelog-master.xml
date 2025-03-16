@@ -4,8 +4,16 @@
         xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
         xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
          http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.5.xsd">
+    <include file="changelogs/0-add-uuid-extension.sql" relativeToChangelogFile="true"/>
     <include file="changelogs/1-create-app-user-table.sql" relativeToChangelogFile="true"/>
     <include file="changelogs/2-create-authority-table.sql" relativeToChangelogFile="true"/>
     <include file="changelogs/3-create-user-authority-table.sql" relativeToChangelogFile="true"/>
+    <include file="changelogs/4-create-location-table.sql" relativeToChangelogFile="true"/>
+    <include file="changelogs/5-create-place-table.sql" relativeToChangelogFile="true"/>
+    <include file="changelogs/6-create-trip-table.sql" relativeToChangelogFile="true"/>
+    <include file="changelogs/7-create-stop-table.sql" relativeToChangelogFile="true"/>
+    <include file="changelogs/8-create-interest-table.sql" relativeToChangelogFile="true"/>
+    <include file="changelogs/9-create-user-interest-table.sql" relativeToChangelogFile="true"/>
+    <include file="changelogs/10-create-user-experience-table.sql" relativeToChangelogFile="true"/>
 </databaseChangeLog>
 <!--    @formatter:on-->
